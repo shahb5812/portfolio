@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Basit Hussain Shah</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .resume-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #0369a1;
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .btn-secondary:hover {
+      background: #cbd5e1;
+    }
+
+    .header-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: #475569;
+      padding-bottom: 18px;
+      border-bottom: 2px solid #0f172a;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .item {
+      margin-bottom: 16px;
+    }
+
+    .item-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 0.98rem;
+    }
+
+    .item-sub {
+      color: #475569;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .bullets {
+      list-style: disc;
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .bullets li {
+      margin-bottom: 4px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      color: #0284c7;
+      font-weight: 600;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .top-actions {
+        display: none !important;
+      }
+      .resume-wrapper {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-wrapper">
+    <div class="top-actions">
+      <a href="index.html" class="btn btn-secondary">← Back to Portfolio</a>
+      <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <div class="header-name">Basit Hussain Shah</div>
+    <div class="contact-info">
+      <span>📞 +91 6005013244</span>
+      <span>✉️ shahb5812@gmail.com</span>
+      <span>🐙 GitHub: <a href="https://github.com/shahb5812" target="_blank" style="color: inherit;">shahb5812</a></span>
+      <span>🔗 LinkedIn: <a href="https://www.linkedin.com/in/basit-hussain-shah-a06b88405/" target="_blank" style="color: inherit;">basit-hussain-shah</a></span>
+      <span>📍 Pulwama, Jammu & Kashmir</span>
+    </div>
+
+    <div class="section-title">Career Objective</div>
+    <p style="font-size: 0.94rem; color: #334155;">
+      A Computer Science student passionate about Full Stack Development. I enjoy building complete web applications, 
+      from designing responsive user interfaces to developing secure and efficient back-end systems. Skilled in 
+      Python, Flask, HTML, CSS, JavaScript, SQL, and Git, and eager to learn new technologies, apply knowledge, 
+      and gain valuable industry experience.
+    </p>
+
+    <div class="section-title">Educational Qualification</div>
+    <div class="item">
+      <div class="item-title-row">
+        <span>B. Tech/BE (Computer Science & Engineering)</span>
+        <span class="badge">2024 – 2027</span>
+      </div>
+      <div class="item-sub">Anna University — Nehru Institute of Engineering and Technology, Coimbatore</div>
+      <div style="font-size: 0.9rem; font-weight: 600;">Percentage / CGPA: 6.49</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title-row">
+        <span>Diploma in Electrical Engineering</span>
+        <span class="badge">2020 – 2023</span>
+      </div>
+      <div class="item-sub">Board of Technical Education / Jammu & Kashmir (BOTE) — Govt. Polytechnic College Srinagar</div>
+      <div style="font-size: 0.9rem; font-weight: 600;">Percentage / CGPA: 6.9</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title-row">
+        <span>Matriculation (10th Standard)</span>
+        <span class="badge">2018 – 2019</span>
+      </div>
+      <div class="item-sub">JKBOSE — Darul Islamia High School Panzgam</div>
+      <div style="font-size: 0.9rem; font-weight: 600;">Percentage: 61.8%</div>
+    </div>
+
+    <div class="section-title">Technical Skills</div>
+    <ul class="bullets">
+      <li><strong>Languages & Frameworks:</strong> Python, Flask, JavaScript, HTML5, CSS3, SQL, Web Technologies</li>
+      <li><strong>Architecture & Engineering:</strong> AI Model Implementation, Database Design, Backend & Frontend Implementation, System Workflow, Data Flow Design</li>
+      <li><strong>Cybersecurity & Tools:</strong> Ethical Hacking Methodologies, Network Scanning, Vulnerability Assessment, Basic Exploitation, Professional Reporting, Git, GitHub</li>
+    </ul>
+
+    <div class="section-title">Projects</div>
+    <div class="item">
+      <div class="item-title-row">
+        <span>AI Power Education Assistant: A Virtual Tutor For Personalized Learning</span>
+        <span class="badge">Coimbatore • 2 Months</span>
+      </div>
+      <ul class="bullets">
+        <li>Implemented AI model integration for conversational programming guidance and personalized learning.</li>
+        <li>Designed normalized SQL database schemas, Python Flask backend routing, and responsive frontend UI.</li>
+        <li>Architected complete system workflows and dynamic data flow pipeline for low-latency tutoring.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Internships & Seminars</div>
+    <div class="item">
+      <div class="item-title-row">
+        <span>Cyber Security & Ethical Hacking Intern</span>
+        <span class="badge">CODTECH IT SOLUTIONS • 1 Month</span>
+      </div>
+      <ul class="bullets">
+        <li>Learned core cybersecurity fundamentals, ethical hacking phases, network scanning, and vulnerability assessment.</li>
+        <li>Conducted basic exploitation assessments and compiled professional security audit reports in a collaborative team.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title-row">
+        <span>Ethical Hacking & SOC Analyst Workshop</span>
+        <span class="badge">Online • 3 Days</span>
+      </div>
+      <div class="item-sub">Training on Security Operations Center workflows, threat monitoring, and incident response.</div>
+    </div>
+
+    <div class="section-title">Certifications</div>
+    <ul class="bullets">
+      <li><strong>AI for Entrepreneurship</strong> — Intel</li>
+      <li><strong>Cybersecurity for Everyone</strong> — University of Maryland</li>
+      <li><strong>Python Data Structure</strong> — Core CS Foundations</li>
+      <li><strong>Ethical Hacking Principles</strong> — Cyber Security Domain</li>
+      <li><strong>Introduction to Cybersecurity Essentials</strong> — Security Fundamentals</li>
+    </ul>
+
+    <div class="section-title">Personal Details</div>
+    <div style="font-size: 0.9rem; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div><strong>Date of Birth:</strong> 10-06-2005</div>
+      <div><strong>Father's Name:</strong> Mohammad Shafi Shah</div>
+      <div style="grid-column: 1 / -1;"><strong>Address:</strong> Jangalnada Shaltokuna Pulwama, Jammu & Kashmir 192301</div>
+    </div>
+  </div>
+
+</body>
+</html>
