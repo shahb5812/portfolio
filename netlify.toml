@@ -1,0 +1,19 @@
+# Netlify Deployment Configuration for Basit Hussain Shah Portfolio
+
+[build]
+  publish = "."
+
+# Clean URLs & Redirects
+[[redirects]]
+  from = "/resume"
+  to = "/resume.html"
+  status = 200
+
+# Security & Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
