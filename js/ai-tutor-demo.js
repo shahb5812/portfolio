@@ -174,11 +174,12 @@ As your **AI Virtual Tutor**, here is a recommended roadmap:
 Would you like to explore **Python data structures**, **Flask backend APIs**, or **Cybersecurity fundamentals**?`;
   }
 
-  function handleUserQuery(query) {
+  async function handleUserQuery(query) {
     if (!query || !query.trim()) return;
 
+    const userText = query.trim();
     // User message
-    appendMessage('user', query.trim());
+    appendMessage('user', userText);
     chatInput.value = '';
 
     // Show temporary typing indicator
@@ -187,17 +188,33 @@ Would you like to explore **Python data structures**, **Flask backend APIs**, or
     typingIndicator.innerHTML = `
       <div class="chat-avatar">AI</div>
       <div class="chat-bubble" style="opacity: 0.7; font-style: italic;">
-        AI Tutor is thinking...
+        AI Tutor is reasoning...
       </div>
     `;
     chatMessages.appendChild(typingIndicator);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    setTimeout(() => {
-      typingIndicator.remove();
-      const answer = getTutorResponse(query);
-      appendMessage('bot', answer);
-    }, 450);
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userText, session_id: 'tutor_sandbox' })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        typingIndicator.remove();
+        appendMessage('bot', data.response);
+        return;
+      }
+      throw new Error('API returned non-200');
+    } catch (err) {
+      setTimeout(() => {
+        typingIndicator.remove();
+        const answer = getTutorResponse(userText);
+        appendMessage('bot', answer);
+      }, 400);
+    }
   }
 
   chatForm.addEventListener('submit', (e) => {

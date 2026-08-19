@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 8. Contact Form Handling ---
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('senderName')?.value || 'Friend';
       const email = document.getElementById('senderEmail')?.value;
@@ -285,15 +285,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Compose mailto fallback
-      const mailtoLink = `mailto:shahb5812@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
-      
-      showToast(`Thank you, ${name}! Opening your email client...`);
-      setTimeout(() => {
-        window.location.href = mailtoLink;
-      }, 700);
+      showToast('Sending message to server...');
 
-      contactForm.reset();
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message })
+        });
+
+        const data = await response.json();
+        if (response.ok && data.success) {
+          showToast(data.message || 'Message stored in database successfully! ✨');
+          contactForm.reset();
+          return;
+        }
+        throw new Error(data.error || 'API error');
+      } catch (err) {
+        // Fallback for static hosting
+        const mailtoLink = `mailto:shahb5812@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+        showToast(`Saved locally! Opening your email client to notify Basit...`);
+        setTimeout(() => {
+          window.location.href = mailtoLink;
+        }, 800);
+        contactForm.reset();
+      }
     });
   }
 
